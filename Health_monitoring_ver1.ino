@@ -13,13 +13,15 @@ void setup() {
 
 void loop() {
  Signal = analogRead(PulsePin);
-  Serial.println("BPM is: ", Signal);
+ Serial.print("BPM is : "); 
+ Serial.println(Signal);
   if(Signal > Threshold){
     digitalWrite(LED13, HIGH);    
     }else{
       digitalWrite(LED13, HIGH);
       }
  temps.MeasureTemp();
+ Serial.print("Temperature is : ");
  Serial.print(temps.TempInCelcius + 20);
  Serial.println("C");
 delay(500);
